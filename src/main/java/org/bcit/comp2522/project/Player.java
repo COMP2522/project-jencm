@@ -25,7 +25,7 @@ public class Player {
     y =+ jumpF;
   }
 
-  public void draw(PApplet p){
+  public void render(PApplet p){
 p.fill(255,0,0);
 p.rect(x,y,width,height);
   }

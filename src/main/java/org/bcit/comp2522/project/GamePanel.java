@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class GamePanel {
+  public GamePanel gamePanel;
   private Player p1;
 
   private List<Pipe> pipes;
@@ -46,11 +47,11 @@ public void update(){
     }
 }
 
-public void draw(PApplet p){
-    p1.draw(p);
+public void render(PApplet p){
+    p1.render(p);
 
     for (Pipe pipe: pipes){
-      pipe.draw(p);
+      pipe.render(p);
     }
 
     p.fill(0);

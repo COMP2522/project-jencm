@@ -24,7 +24,7 @@ private float velocityX;
     x += velocityX;
   }
 
-  public void draw(PApplet p){
+  public void render(PApplet p){
     p.fill(0, 255, 0);
     p.rect(x, 0, width, topHeight);
     p.rect(x, bottomY, width, p.height - bottomY);
@@ -51,6 +51,5 @@ private float velocityX;
   public float getGap() {
     return gap;
   }
-
 
 }

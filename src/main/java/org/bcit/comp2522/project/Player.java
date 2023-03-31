@@ -2,7 +2,7 @@ package org.bcit.comp2522.project;
 
 import processing.core.PApplet;
 
-public class Player {
+public class Player implements Collidable {
   private float x,y;
   private int width, height;
   private float velocity;

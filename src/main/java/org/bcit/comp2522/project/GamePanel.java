@@ -8,14 +8,11 @@ import java.util.List;
 public class GamePanel {
   public GamePanel gamePanel;
   private Player p1;
-
   private List<Pipe> pipes;
   private List<Gem> gems;
+  private List<Stone> stones;
   private GameState gameState;
-
   private int score;
-
-
 
   public enum GameState {
     START,
@@ -83,7 +80,6 @@ public void render(PApplet p){
   for (Gem gem: gems){
     gem.render(p);
   }
-
     p.fill(0);
     p.textSize(32);
     if (gameState == GameState.START){

@@ -2,7 +2,7 @@ package org.bcit.comp2522.project;
 
 import processing.core.PApplet;
 
-public class Pipe {
+public class Pipe implements Collidable {
 private float x;
 private float topHeight;
 private float bottomY;

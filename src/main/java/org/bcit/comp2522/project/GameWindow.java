@@ -15,8 +15,7 @@ public class GameWindow extends PApplet {
 
   @Override
   public void setup(){
-    frameRate(60);
-  }
+    frameRate(60);}
 
   @Override
   public void draw(){

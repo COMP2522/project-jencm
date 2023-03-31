@@ -22,7 +22,7 @@ public class Player {
   //updates the position of the bird with the gravity
   public void update(){
     velocity -= gravity;
-    y =+ jumpF;
+    y -= velocity;
   }
 
   public void render(PApplet p){
@@ -35,7 +35,7 @@ p.rect(x,y,width,height);
   }
 
   public boolean isCollidingWith(Pipe pipe) {
-    return(x + width > pipe.getX() && x < pipe.getX() &&
-        (y < pipe.getTopHeight() || y > pipe.getBottomHeight() ));
+    return(x + width > pipe.getX() && (x < pipe.getX() + pipe.getWidth()) &&
+        (y < pipe.getTopHeight() || (y+height) > pipe.getBottomHeight() ));
     }
   }

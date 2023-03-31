@@ -1,4 +1,4 @@
-package org.example;
+package org.bcit.comp2522.project;
 
 import processing.core.PApplet;
 import processing.core.PImage;
@@ -9,7 +9,7 @@ import javax.swing.ImageIcon;
 
 import static processing.awt.ShimAWT.loadImage;
 
-public class Player {
+public class Player extends PApplet {
     private float x, y;
     private int width, height;
     private float velocity;
@@ -27,8 +27,8 @@ public class Player {
     public Player(float x, float y, int width, int height, int velocity) {
         this.x = x;
         this.y = y;
-        this.width = 300;
-        this.height = 300;
+        this.width = width;
+        this.height = height;
         this.velocity = 0;
         this.gravity = 0.6f;
         this.jumpF = 9;
@@ -41,6 +41,11 @@ public class Player {
         velocity -= gravity;
         y -= velocity; // subtract the velocity from the y position
     }
+    
+      public void updategem(){
+    velocity -= gravity;
+    y -=(1.5 * velocity);
+  }
 
     public void render(PApplet p) {
         PImage playerImage = p.loadImage("Player1_Right_Frame_1.png");

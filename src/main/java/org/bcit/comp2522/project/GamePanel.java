@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class GamePanel {
+public class GamePanel extends PApplet{
 
     public GamePanel gamePanel;
     private Player p1;

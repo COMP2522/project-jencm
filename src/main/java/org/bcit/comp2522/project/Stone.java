@@ -1,4 +1,4 @@
-package org.bcit.comp2522.project;
+package org.example;
 
 public class Stone {
 }

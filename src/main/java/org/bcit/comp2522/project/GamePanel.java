@@ -1,4 +1,5 @@
-package org.example;
+package org.bcit.comp2522.project;
+
 
 import processing.core.PApplet;
 
@@ -86,7 +87,7 @@ public class GamePanel extends PApplet{
         }
         p.fill(255);
         p.textSize(24);
-        p.text("Score: " + score, 20, 70);
+        p.text("Score: " + score/32, 20, 70);
 
     }
 

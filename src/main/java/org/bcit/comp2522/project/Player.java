@@ -8,6 +8,11 @@ public class Player {
   private float velocity;
   private int jumpF;
   private float gravity;
+  private float gemgravity;
+
+  public float getX() {
+    return x;
+  }
 
   public Player(float x, float y, int width, int height, int velocity){
     this.x = x;
@@ -17,12 +22,18 @@ public class Player {
     this.velocity = 0;
     this.gravity = 0.6f;
     this.jumpF = 9;
+    this.gemgravity = 0.25f;
   }
 
   //updates the position of the bird with the gravity
   public void update(){
     velocity -= gravity;
     y -= velocity;
+  }
+
+  public void updategem(){
+    velocity -= gravity;
+    y -=(1.5 * velocity);
   }
 
   public void render(PApplet p){
@@ -38,4 +49,8 @@ p.rect(x,y,width,height);
     return(x + width > pipe.getX() && (x < pipe.getX() + pipe.getWidth()) &&
         (y < pipe.getTopHeight() || (y+height) > pipe.getBottomHeight() ));
     }
+
+  public boolean isCollidingWithg(Gem gem) {
+    return(x == gem.getX() && (y == gem.getY()));
+  }
   }

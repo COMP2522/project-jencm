@@ -26,6 +26,9 @@ public class GameWindow extends PApplet {
       float topHeight = random(100,400);
       float gap = 200;
       gamePanel.addPipe(new Pipe(width, topHeight, topHeight + gap, 100, gap, -3));
+      float xgem = random(100,400);
+      float ygem = random(100,400);
+
     }
   }
 

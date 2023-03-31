@@ -10,9 +10,12 @@ public class GamePanel {
   private Player p1;
 
   private List<Pipe> pipes;
+  private List<Gem> gems;
   private GameState gameState;
 
   private int score;
+
+
 
   public enum GameState {
     START,
@@ -22,6 +25,7 @@ public class GamePanel {
 public GamePanel(){
     p1 = new Player(100, 300, 30, 30, 4);
     pipes = new ArrayList<>();
+    gems = new ArrayList<>();
     gameState = GameState.START;
     score = 0;
 }
@@ -44,6 +48,28 @@ public void update(){
         }
       }
 
+      Iterator<Gem> iteratorg = gems.iterator();
+      while(iteratorg.hasNext()){
+        Gem gem = iteratorg.next();
+        gem.update();
+
+        if(p1.isCollidingWithg(gem)){
+          p1.updategem();
+        }
+
+        if(gem.getX() + gem.getWidth() < 0){
+          iteratorg.remove();
+        }
+
+      }
+
+      for(Pipe pipe: pipes){
+        if(!pipe.isPass() && p1.getX() >pipe.getX() + pipe.getWidth()){
+          pipe.setPass(true);
+          score++;
+        }
+      }
+
     }
 }
 
@@ -54,6 +80,10 @@ public void render(PApplet p){
       pipe.render(p);
     }
 
+  for (Gem gem: gems){
+    gem.render(p);
+  }
+
     p.fill(0);
     p.textSize(32);
     if (gameState == GameState.START){
@@ -61,7 +91,9 @@ public void render(PApplet p){
     }else if (gameState == GameState.GAME_OVER){
       p.text("Game Over", 350, 100);
     }
-
+    p.fill(255);
+    p.textSize(24);
+    p.text("Score: " + score, 20, 70);
 }
 
 public void reset(){

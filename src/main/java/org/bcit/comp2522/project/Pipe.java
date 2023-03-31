@@ -9,6 +9,7 @@ private float bottomY;
 private int width;
 private float gap;
 private float velocityX;
+private boolean pass;
 
 
 
@@ -19,9 +20,17 @@ private float velocityX;
     this.width = width;
     this.gap = gap;
     this.velocityX = velocityX;
+    pass = false;
   }
   public void update(){
     x += velocityX;
+  }
+  public boolean isPass(){
+    return pass;
+  }
+
+  public void setPass(boolean b){
+    this.pass = pass;
   }
 
   public void render(PApplet p){

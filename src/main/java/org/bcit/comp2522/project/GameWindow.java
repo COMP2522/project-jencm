@@ -31,8 +31,8 @@ public class GameWindow extends PApplet {
 
     @Override
     public void setup() {
-        size(800, 600);
         backgroundImage = loadImage("cave.jpg");
+        frameRate(60);
     }
 
     @Override
@@ -56,7 +56,7 @@ public class GameWindow extends PApplet {
     }
 
     public static void main(String[] args) {
-        PApplet.main("org.example.GameWindow");
+        PApplet.main("org.bcit.comp2522.project.GameWindow");
     }
 
 }

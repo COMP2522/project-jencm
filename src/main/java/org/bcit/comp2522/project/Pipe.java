@@ -3,14 +3,15 @@ package org.example;
 import processing.core.PApplet;
 import processing.core.PImage;
 
-public class Pipe {
+public class Pipe extends PApplet{
     private float x;
     private float topHeight;
     private float bottomY;
     private int width;
     private float gap;
     private float velocityX;
-
+    private boolean pass;
+    
     PImage pipeImage;
 
 
@@ -21,12 +22,19 @@ public class Pipe {
         this.width = width;
         this.gap = gap;
         this.velocityX = velocityX;
+        pass = false;
     }
 
     public void update() {
         x += velocityX;
     }
-
+    
+     public boolean isPass(){
+    return pass;
+  }
+  public void setPass(boolean b){
+    this.pass = pass;
+  }
     public void render(PApplet p) {
         PImage pipeImage = p.loadImage("pipe.png");
         p.image(pipeImage, x, 0, width, topHeight);

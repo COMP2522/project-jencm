@@ -2,7 +2,7 @@ package org.bcit.comp2522.project;
 
 import processing.core.PApplet;
 
-public class Gem {
+public class Gem extends PApplet{
   private float x;
 
 

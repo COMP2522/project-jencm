@@ -22,6 +22,10 @@ abstract class SpeedChanger extends PApplet implements Collidable {
     p.rect(x,y,width,height);
   }
 
+  public void update(){
+    this.x +=this.velocityX;
+  }
+
   public float getY() {
     return y;
   }

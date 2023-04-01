@@ -11,8 +11,6 @@ private float gap;
 private float velocityX;
 private boolean pass;
 
-
-
   public Pipe(float x, float topHeight, float bottomY, int width, float gap, float velocityX ){
     this.x = x;
     this.topHeight = topHeight;
@@ -38,7 +36,6 @@ private boolean pass;
     p.rect(x, 0, width, topHeight);
     p.rect(x, bottomY, width, p.height - bottomY);
   }
-
 
   public float getX() {
     return x;

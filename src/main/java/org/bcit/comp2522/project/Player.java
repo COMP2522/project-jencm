@@ -8,7 +8,6 @@ public class Player implements Collidable {
   private float velocity;
   private int jumpF;
   private float gravity;
-  private float gemgravity;
 
   public float getX() {
     return x;
@@ -20,9 +19,8 @@ public class Player implements Collidable {
     this.width = width;
     this.height = height;
     this.velocity = 0;
-    this.gravity = 0.6f;
+    this.gravity = 0.5f;
     this.jumpF = 9;
-    this.gemgravity = 0.25f;
   }
 
   //updates the position of the bird with the gravity
@@ -31,14 +29,9 @@ public class Player implements Collidable {
     y -= velocity;
   }
 
-  public void updategem(){
-    velocity -= gravity;
-    y -=(1.5 * velocity);
-  }
-
   public void render(PApplet p){
-p.fill(255,0,0);
-p.rect(x,y,width,height);
+    p.fill(255,0,0);
+    p.rect(x,y,width,height);
   }
 
   public void jump(){
@@ -47,11 +40,11 @@ p.rect(x,y,width,height);
 
   public boolean isCollidingWith(Pipe pipe) {
     return(x + width > pipe.getX() && (x < pipe.getX() + pipe.getWidth()) &&
-        (y < pipe.getTopHeight() || (y+height) > pipe.getBottomHeight() ));
+        (y < pipe.getTopHeight() || (y+height) > pipe.getBottomHeight()));
     }
 
-  public boolean isCollidingWithg(Gem gem) {
-    return(x == gem.getX() && (y == gem.getY()));
+  public boolean isCollidingWithGem(Gem gem) {
+    return((x+width > gem.getX() && x < gem.getX() + gem.getWidth()) && (y+width == gem.getY() || (y == gem.getY() + gem.getWidth())));
   }
   }
 

@@ -13,6 +13,7 @@ public class GamePanel {
   private List<Stone> stones;
   private GameState gameState;
   private int score;
+  private float curFrameRate;
 
   public enum GameState {
     START,
@@ -26,6 +27,20 @@ public GamePanel(){
     gameState = GameState.START;
     score = 0;
 }
+  public int getScore() {
+    return score;
+  }
+
+  public void setScore(int score) {
+    this.score = score;
+  }
+  public float getCurFrameRate() {
+    return curFrameRate;
+  }
+
+  public void setCurFrameRate(float curFrameRate) {
+    this.curFrameRate = curFrameRate;
+  }
 
 public void update(){
     if (gameState == GameState.PLAYING){
@@ -45,19 +60,17 @@ public void update(){
         }
       }
 
-      Iterator<Gem> iteratorg = gems.iterator();
-      while(iteratorg.hasNext()){
-        Gem gem = iteratorg.next();
+      Iterator<Gem> GemIterator = gems.iterator();
+      while(GemIterator.hasNext()){
+        Gem gem = GemIterator.next();
         gem.update();
-
-        if(p1.isCollidingWithg(gem)){
-          p1.updategem();
+        if(p1.isCollidingWithGem(gem)){
+          gem.decSpeed(this);
+          GemIterator.remove();
         }
-
         if(gem.getX() + gem.getWidth() < 0){
-          iteratorg.remove();
+          GemIterator.remove();
         }
-
       }
 
       for(Pipe pipe: pipes){
@@ -72,14 +85,12 @@ public void update(){
 
 public void render(PApplet p){
     p1.render(p);
-
     for (Pipe pipe: pipes){
       pipe.render(p);
     }
-
-  for (Gem gem: gems){
-    gem.render(p);
-  }
+    for (Gem gem: gems){
+      gem.render(p);
+    }
     p.fill(0);
     p.textSize(32);
     if (gameState == GameState.START){
@@ -95,6 +106,7 @@ public void render(PApplet p){
 public void reset(){
     p1 = new Player(100,300,30,30,4);
     pipes.clear();
+    gems.clear();
     gameState = GameState.START;
     score = 0;
 
@@ -103,6 +115,8 @@ public void reset(){
 public void addPipe(Pipe pipe){
     pipes.add(pipe);
 }
+
+public void addGem(Gem gem){gems.add(gem);}
 
 public void onKeyPressed(char key) {
     if (key == ' '){

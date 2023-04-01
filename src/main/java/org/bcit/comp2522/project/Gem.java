@@ -7,7 +7,8 @@ public class Gem extends SpeedChanger{
     super(x, y, width, height, velocityX);
   }
 
-  public void decSpeed() {
-
+  public void decSpeed(GamePanel g) {
+    g.setCurFrameRate(g.getCurFrameRate()*2f);
+    frameRate(g.getCurFrameRate());
   }
 }

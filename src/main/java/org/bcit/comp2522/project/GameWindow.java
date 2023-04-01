@@ -15,7 +15,8 @@ public class GameWindow extends PApplet {
 
   @Override
   public void setup(){
-    frameRate(60);}
+    frameRate(60);
+  }
 
   @Override
   public void draw(){
@@ -24,11 +25,13 @@ public class GameWindow extends PApplet {
     gamePanel.render(this);
     if(frameCount % 100 == 0) {
       float topHeight = random(100,400);
-      float gap = 200;
+      float gap = 250;
       gamePanel.addPipe(new Pipe(width, topHeight, topHeight + gap, 100, gap, -3));
-      float xgem = random(100,400);
-      float ygem = random(100,400);
-
+      if(gamePanel.getScore() > 5 && frameCount % 200 == 0) {
+        float xGem = random(600, 1000);
+        float yGem = random(200,400);
+        gamePanel.addGem(new Gem(xGem, yGem, 25, 25, -3));
+      }
     }
   }
 

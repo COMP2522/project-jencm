@@ -7,8 +7,9 @@ public class Stone extends SpeedChanger{
     super(x, y, width, height, velocityX);
   }
 
-  public void incSpeed() {
-
+  public void incSpeed(GamePanel g) {
+    g.setCurFrameRate(g.getCurFrameRate()*1.25f);
+    frameRate(g.getCurFrameRate());
   }
 }
 

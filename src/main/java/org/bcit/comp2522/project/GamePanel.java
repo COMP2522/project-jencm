@@ -102,6 +102,7 @@ public void render(PApplet p){
     p.text("Score: " + score/32, 20, 70);
 
 
+
     if (gameState == GameState.START) {
       List<ScoreEntry> topFiveScores = scoreRepository.getTopFiveScores();
 
@@ -115,6 +116,7 @@ public void render(PApplet p){
         yOffset += 30;
       }
     }
+
 
 
 }

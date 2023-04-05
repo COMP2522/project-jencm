@@ -54,3 +54,4 @@ p.rect(x,y,width,height);
     return(x == gem.getX() && (y == gem.getY()));
   }
   }
+

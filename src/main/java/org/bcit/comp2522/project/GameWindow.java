@@ -4,6 +4,7 @@ import processing.core.PApplet;
 
 public class GameWindow extends PApplet {
   private GamePanel gamePanel;
+  private ScoreRepository scoreRepository;
   public GameWindow(){
     gamePanel = new GamePanel();
   }
@@ -31,14 +32,23 @@ public class GameWindow extends PApplet {
 
     }
   }
-
+  public ScoreRepository getScoreRepository() {
+    return scoreRepository;
+  }
   @Override
   public void keyPressed(){
     gamePanel.onKeyPressed(key);
   }
 
-  public static void main(String[] args){
+  public static void main(String[] args) {
     PApplet.main("org.bcit.comp2522.project.GameWindow");
+    GameWindow gameWindow = new GameWindow();
+    PApplet.runSketch(new String[]{"GameWindow"}, gameWindow);
+
+    Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+      gameWindow.getScoreRepository().close();
+    }));
   }
+
 
 }

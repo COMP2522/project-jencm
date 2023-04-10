@@ -10,6 +10,12 @@ import java.security.PrivateKey;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
+/**
+ * This class deals with the way images
+ * appear on the screen using PApplet
+ * it's main function is to add the visuals.
+ * @author noorsangha
+ */
 
 public class GameWindow extends PApplet {
     private PApplet p;

@@ -16,7 +16,15 @@ public class GamePanel {
 
     private List<Gem> gems;
 
+    private List<Enemy1> enemies;
+
     private int score;
+    private org.example.Player Player;
+
+    public Player getPlayer() {
+        return Player;
+    }
+
 
 //    private ScoreRepository scoreRepository;
 
@@ -30,6 +38,7 @@ public class GamePanel {
         p1 = new Player(100, 300, 30, 30, 4);
         pipes = new ArrayList<>();
         gems = new ArrayList<>();
+        enemies = new ArrayList<>();
         gameState = GameState.START;
         score = 0;
 //        scoreRepository = new ScoreRepository();
@@ -90,6 +99,10 @@ public class GamePanel {
         for (Gem gem: gems){
             gem.render(p);
         }
+        for (Enemy1 enemy1 : enemies) {
+            enemy1.render(p);
+        }
+
 
         p.fill(140, 0, 140);
         p.textSize(32);
@@ -121,6 +134,7 @@ public class GamePanel {
     public void reset() {
         p1 = new Player(100,300,30,30,4);
         pipes.clear();
+        enemies.clear();
         gameState = GameState.START;
         score = 0;
 
@@ -128,6 +142,10 @@ public class GamePanel {
 
     public void addPipe(Pipe pipe) {
         pipes.add(pipe);
+    }
+
+    public void addEnemy(Enemy1 enemy1) {
+        enemies.add(enemy1);
     }
 
     public void onKeyPressed(char key) {

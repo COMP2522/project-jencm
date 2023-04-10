@@ -50,7 +50,6 @@ public class Player {
     public void render(PApplet p) {
         PImage playerImage = p.loadImage("Player1_Right_Frame_1.png");
         p.image(playerImage, x, y, width, height);
-        ;
     }
 
     public void jump() {
@@ -60,6 +59,11 @@ public class Player {
     public boolean isCollidingWith(Pipe pipe) {
         return (x + width > pipe.getX() && x < pipe.getX() &&
                 (y + height < pipe.getTopHeight() || y > pipe.getBottomHeight()));
+    }
+
+    public boolean isCollidingWithE(Enemy1 enemy1) {
+        return (x + width > enemy1.getX() && x < enemy1.getX() &&
+                (y + height < enemy1.getHeight()));
     }
 
     public boolean isCollidingWithg(Gem gem) {

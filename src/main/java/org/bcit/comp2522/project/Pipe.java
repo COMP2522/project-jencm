@@ -13,6 +13,8 @@ public class Pipe {
 
     PImage pipeImage;
 
+    private boolean pass;
+
 
     public Pipe(float x, float topHeight, float bottomY, int width, float gap, float velocityX) {
         this.x = x;
@@ -21,10 +23,19 @@ public class Pipe {
         this.width = width;
         this.gap = gap;
         this.velocityX = velocityX;
+        pass = false;
     }
 
     public void update() {
         x += velocityX;
+    }
+
+    public boolean isPass(){
+        return pass;
+    }
+
+    public void setPass(boolean b){
+        this.pass = pass;
     }
 
     public void render(PApplet p) {

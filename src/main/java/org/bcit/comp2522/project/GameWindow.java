@@ -15,6 +15,8 @@ public class GameWindow extends PApplet {
     private PApplet p;
     private GamePanel gamePanel;
 
+//    private ScoreRepository scoreRepository;
+
     PImage backgroundImage;
 
 
@@ -31,6 +33,7 @@ public class GameWindow extends PApplet {
 
     @Override
     public void setup() {
+        frameRate(60);
         size(800, 600);
         backgroundImage = loadImage("cave.jpg");
     }
@@ -49,6 +52,9 @@ public class GameWindow extends PApplet {
         }
 
     }
+//    public ScoreRepository getScoreRepository() {
+//        return scoreRepository;
+//    }
 
     @Override
     public void keyPressed() {
@@ -57,6 +63,12 @@ public class GameWindow extends PApplet {
 
     public static void main(String[] args) {
         PApplet.main("org.example.GameWindow");
+//        GameWindow gameWindow = new GameWindow();
+//        PApplet.runSketch(new String[]{"GameWindow"}, gameWindow);
+//
+//        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+//            gameWindow.getScoreRepository().close();
+//        }));
     }
 
 }

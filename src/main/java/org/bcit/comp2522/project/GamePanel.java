@@ -18,6 +18,8 @@ public class GamePanel {
 
     private int score;
 
+//    private ScoreRepository scoreRepository;
+
     public enum GameState {
         START,
         PLAYING,
@@ -30,6 +32,7 @@ public class GamePanel {
         gems = new ArrayList<>();
         gameState = GameState.START;
         score = 0;
+//        scoreRepository = new ScoreRepository();
     }
 
     public void update() {
@@ -65,6 +68,17 @@ public class GamePanel {
 
             }
         }
+        for(Pipe pipe: pipes){
+            if(!pipe.isPass() && p1.getX() >pipe.getX() + pipe.getWidth()){
+                pipe.setPass(true);
+                score++;
+            }
+        }
+
+//        if (gameState == GameState.GAME_OVER) {
+//            // Save the player's score and name (replace "Player" with the actual player name)
+//            scoreRepository.insertScore("Player", score);
+//        }
     }
 
     public void render(PApplet p) {
@@ -87,6 +101,20 @@ public class GamePanel {
         p.fill(255);
         p.textSize(24);
         p.text("Score: " + score, 20, 70);
+
+//        if (gameState == GameState.START) {
+//            List<ScoreEntry> topFiveScores = scoreRepository.getTopFiveScores();
+//
+//            p.fill(255);
+//            p.textSize(20);
+//            p.text("Top 5 Scores:", 250, 150);
+//
+//            int yOffset = 180;
+//            for (ScoreEntry entry : topFiveScores) {
+//                p.text(entry.getPName() + ": " + entry.getScore(), 250, yOffset);
+//                yOffset += 30;
+//            }
+//        }
 
     }
 

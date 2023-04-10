@@ -1,4 +1,4 @@
 package org.example;
 
-public class Stone {
+public class Enemy2 {
 }

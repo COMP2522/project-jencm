@@ -11,7 +11,7 @@ import static processing.awt.ShimAWT.loadImage;
 
 public class Player {
     private float x, y;
-    private int width, height;
+    public int width, height;
     private float velocity;
     private int jumpF;
     private float gravity;
@@ -42,15 +42,15 @@ public class Player {
         y -= velocity; // subtract the velocity from the y position
     }
 
+    public void updategem(){
+        velocity -= gravity;
+        y -=(1.5 * velocity);
+    }
+
     public void render(PApplet p) {
         PImage playerImage = p.loadImage("Player1_Right_Frame_1.png");
         p.image(playerImage, x, y, width, height);
         ;
-    }
-
-    public void updategem() {
-        velocity -= gravity;
-        y -= (1.5 * velocity);
     }
 
     public void jump() {
@@ -64,6 +64,10 @@ public class Player {
 
     public boolean isCollidingWithg(Gem gem) {
         return (x == gem.getX() && (y == gem.getY()));
+    }
+
+    public int getY() {
+        return 0;
     }
 }
 

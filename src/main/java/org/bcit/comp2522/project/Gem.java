@@ -3,7 +3,7 @@ package org.example;
 import processing.core.PApplet;
 import processing.core.PImage;
 
-public class Gem {
+public class Gem extends PApplet{
     private float x;
 
     private float y;
@@ -44,7 +44,7 @@ public class Gem {
     }
 
     public float getHeight() {
-        return x;
+        return y;
     }
 
 

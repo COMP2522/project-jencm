@@ -2,7 +2,14 @@ package org.bcit.comp2522.project;
 
 import processing.core.PApplet;
 
-public class Gem {
+/** This class is to create a gem object
+ * the class deals with the creating, updating
+ * and getters an setters to enable other
+ * classes to use the object.
+
+ * @author noorsangha
+ */
+public class Gem extends PApplet {
   private float x;
 
 
@@ -13,7 +20,15 @@ public class Gem {
   private int height;
   private float velocityX;
 
-  public Gem(float x, float y, int width, int height, float velocityX){
+  /** Gem constructor.
+
+   * @param x position
+   * @param y position
+   * @param width size
+   * @param height size
+   * @param velocityX speed
+   */
+  public Gem(float x, float y, int width, int height, float velocityX) {
     this.x = x;
     this.y = y;
     this.width = width;
@@ -21,12 +36,13 @@ public class Gem {
     this.velocityX = velocityX;
   }
 
-  public void update(){
+  public void update() {
     x += velocityX;
   }
-  public void render(PApplet p){
-    p.fill(180,0,0);
-    p.rect(x,y,width,height);
+
+  public void render(PApplet p) {
+    p.fill(180, 0, 0);
+    p.rect(x, y, width, height);
   }
 
   public float getY() {
@@ -47,3 +63,4 @@ public class Gem {
 
 
 }
+

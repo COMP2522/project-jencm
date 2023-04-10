@@ -3,6 +3,11 @@ package org.bcit.comp2522.project;
 import processing.core.PApplet;
 import processing.core.PImage;
 
+/**
+ * This is the first Enemy class that chases the player
+ * @author Ebony Proskow
+ */
+
 public class Enemy1 {
     private float x, y;
     private int width, height;
@@ -10,20 +15,26 @@ public class Enemy1 {
 
     private PImage enemyImage;
 
-    public float getX() {
-        return x;
-    }
-
+    /**
+     * Enemy constructor
+     * @param x position
+     * @param y position
+     * @param width
+     * @param height
+     * @param velocity
+     */
     public Enemy1(float x, float y, int width, int height, float velocity) {
-        this.x = x;
-        this.y = y;
-        this.width = width;
-        this.height = height;
+        this.x = (float) Math.random();;
+        this.y = (float) Math.random();
+        this.width = 300;
+        this.height = 300;
         this.velocity = velocity;
     }
 
+    /**
+     * Updates the Enemy to chase after the player.
+     */
     public void update(float playerX, float playerY) {
-        // Update the position of the enemy to chase after the player
         float dx = playerX - x;
         float dy = playerY - y;
         float angle = PApplet.atan2(dy, dx);
@@ -33,17 +44,31 @@ public class Enemy1 {
         y += vy;
     }
 
+    /**
+     * Renders the enemy on the screen.
+     */
     public void render(PApplet p) {
-        if (enemyImage == null) {
-            // Load the enemy image if it hasn't been loaded already
-            enemyImage = p.loadImage("Enemy1_Frame1.png");
-        }
+        PImage enemyImage = p.loadImage("Enemy1_Frame1.png");
         p.image(enemyImage, x, y, width, height);
     }
 
-    public boolean isCollidingWith(Player player) {
-        return (x + width > player.getX() && x < player.getX() + player.width &&
-                y + height > player.getY() && y < player.getY() + player.height);
+    public float getX() {
+        return x;
     }
+
+    public float getY() {
+        return y;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+
+    public int getWidth() {
+        return width;
+    }
+
+
 }
 

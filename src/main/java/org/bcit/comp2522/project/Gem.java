@@ -3,9 +3,8 @@ package org.bcit.comp2522.project;
 import processing.core.PApplet;
 
 
-
-
-
+public class Gem {
+  private float x;
   private float y;
   private int width;
 

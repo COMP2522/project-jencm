@@ -6,7 +6,6 @@ package org.bcit.comp2522.project;
  */
 public class ScoreEntry {
 
-
   private String pname;
 
   private int score;

@@ -1,55 +1,67 @@
 package org.bcit.comp2522.project;
 
 import processing.core.PApplet;
+import processing.core.PImage;
+
 
 public class GameWindow extends PApplet {
-  private GamePanel gamePanel;
-  private ScoreRepository scoreRepository;
-  public GameWindow(){
-    gamePanel = new GamePanel();
-  }
+    private PApplet p;
+    private GamePanel gamePanel;
 
-  @Override
-  public void settings(){
-    size(800,600);
-  }
+//    private ScoreRepository scoreRepository;
 
-  @Override
-  public void setup(){
-    frameRate(60);}
+    PImage backgroundImage;
 
-  @Override
-  public void draw(){
-    background(135,206,235);
-    gamePanel.update();
-    gamePanel.render(this);
-    if(frameCount % 100 == 0) {
-      float topHeight = random(100,400);
-      float gap = 200;
-      gamePanel.addPipe(new Pipe(width, topHeight, topHeight + gap, 100, gap, -3));
-      float xgem = random(100,400);
-      float ygem = random(100,400);
+
+    public GameWindow() {
+        gamePanel = new GamePanel();
+    }
+
+
+
+    @Override
+    public void settings() {
+        size(800, 600);
+    }
+
+    @Override
+    public void setup() {
+        frameRate(60);
+        size(800, 600);
+        backgroundImage = loadImage("cave.jpg");
+    }
+
+    @Override
+    public void draw() {
+        image(backgroundImage, 0, 0, width, height);
+        gamePanel.update();
+        gamePanel.render(this);
+        if (frameCount % 100 == 0) {
+            float topHeight = random(100, 400);
+            float gap = 200;
+            gamePanel.addPipe(new Pipe(width, topHeight, topHeight + gap, 100, gap, -3));
+            float xgem = random(100,400);
+            float ygem = random(100,400);
+        }
 
     }
-  }
-  public ScoreRepository getScoreRepository() {
-    return scoreRepository;
-  }
-  @Override
-  public void keyPressed(){
-    gamePanel.onKeyPressed(key);
-  }
+//    public ScoreRepository getScoreRepository() {
+//        return scoreRepository;
+//    }
 
-  public static void main(String[] args) {
-    PApplet.main("org.bcit.comp2522.project.GameWindow");
-    GameWindow gameWindow = new GameWindow();
-    PApplet.runSketch(new String[]{"GameWindow"}, gameWindow);
+    @Override
+    public void keyPressed() {
+        gamePanel.onKeyPressed(key);
+    }
 
-    Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-      gameWindow.getScoreRepository().close();
-    }));
-  }
-
+    public static void main(String[] args) {
+        PApplet.main("org.example.GameWindow");
+//        GameWindow gameWindow = new GameWindow();
+//        PApplet.runSketch(new String[]{"GameWindow"}, gameWindow);
+//
+//        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+//            gameWindow.getScoreRepository().close();
+//        }));
+    }
 
 }
-

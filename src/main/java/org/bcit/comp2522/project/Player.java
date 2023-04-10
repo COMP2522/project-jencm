@@ -93,5 +93,5 @@ public class Player {
   public boolean isCollidingWithg(Gem gem) {
     return(x == gem.getX() && (y == gem.getY()));
   }
-}
+
 

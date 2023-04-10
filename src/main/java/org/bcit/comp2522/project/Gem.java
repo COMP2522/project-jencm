@@ -2,15 +2,7 @@ package org.bcit.comp2522.project;
 
 import processing.core.PApplet;
 
-/** This class is to create a gem object
- * the class deals with the creating, updating
- * and getters an setters to enable other
- * classes to use the object.
 
- * @author noorsangha
- */
-public class Gem extends PApplet {
-  private float x;
 
 
 

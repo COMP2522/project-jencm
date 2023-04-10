@@ -124,6 +124,7 @@ public class GamePanel {
 
 
 
+
     if (gameState == GameState.START) {
       List<ScoreEntry> topFiveScores = scoreRepository.getTopFiveScores();
 
@@ -137,6 +138,7 @@ public class GamePanel {
         yOffset += 30;
       }
     }
+
 
 
 
@@ -166,3 +168,4 @@ public class GamePanel {
     }
   }
 }
+

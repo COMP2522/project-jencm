@@ -1,24 +1,38 @@
 package org.bcit.comp2522.project;
 
+/**
+ * Score Entry for actual game.
+ * @author noorsangha
+ */
 public class ScoreEntry {
 
 
-  private String PName;
-
-
+  private String pname;
 
   private int score;
 
-  public ScoreEntry(String PName, int score){
-    this.PName = PName;
-    this.score= score;
+  /**
+   * Score Entry Constructor.
+   * @param pname string
+   * @param score int
+   */
+  public ScoreEntry(String pname, int score) {
+    this.pname = pname;
+    this.score = score;
   }
 
+  /** get score.
+   *
+   * @return score int
+   */
   public int getScore() {
     return score;
   }
 
-  public String getPName() {
-    return PName;
+  /** Get players name.
+   * @return string pname
+   */
+  public String getPname() {
+    return pname;
   }
 }

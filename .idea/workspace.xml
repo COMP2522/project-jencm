@@ -7,10 +7,19 @@
     <list default="true" id="b73b0a3b-f807-4eed-a6bf-cb09efda5bdd" name="Changes" comment="Updated and combined changes from Ebony and Noor,&#10;mongodb, enemies, bullets, and gems not yet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Enemy1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Enemy1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Enemy2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Enemy2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Enemy3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Enemy3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EnemyBullet1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/EnemyBullet1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EnemyBullet2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/EnemyBullet2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EnemyBullet3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/EnemyBullet3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Gem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Gem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Pipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Pipe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cave.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cave.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ScoreEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ScoreEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ScoreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ScoreRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681094288350</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Updated and combined changes from Ebony and Noor,&#10;mongodb, enemies, bullets, and gems not yet">
+      <created>1681103423589</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681103423589</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

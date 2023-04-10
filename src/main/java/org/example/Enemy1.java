@@ -9,6 +9,10 @@ import javax.swing.ImageIcon;
 
 import static processing.awt.ShimAWT.loadImage;
 
+/**
+ * This is the first Enemy class that chases the player
+ * @author Ebony Proskow
+ */
 
 public class Enemy1 {
     private float x, y;
@@ -17,7 +21,14 @@ public class Enemy1 {
 
     private PImage enemyImage;
 
-
+    /**
+     * Enemy constructor
+     * @param x position
+     * @param y position
+     * @param width
+     * @param height
+     * @param velocity
+     */
     public Enemy1(float x, float y, int width, int height, float velocity) {
         this.x = (float) Math.random();;
         this.y = (float) Math.random();
@@ -26,8 +37,10 @@ public class Enemy1 {
         this.velocity = velocity;
     }
 
+    /**
+     * Updates the Enemy to chase after the player.
+     */
     public void update(float playerX, float playerY) {
-        // Update the position of the enemy to chase after the player
         float dx = playerX - x;
         float dy = playerY - y;
         float angle = PApplet.atan2(dy, dx);
@@ -37,6 +50,9 @@ public class Enemy1 {
         y += vy;
     }
 
+    /**
+     * Renders the enemy on the screen.
+     */
     public void render(PApplet p) {
         PImage enemyImage = p.loadImage("Enemy1_Frame1.png");
         p.image(enemyImage, x, y, width, height);

@@ -21,7 +21,7 @@ public class GameWindow extends PApplet {
     private PApplet p;
     private GamePanel gamePanel;
 
-//    private ScoreRepository scoreRepository;
+    private ScoreRepository scoreRepository;
 
     PImage backgroundImage;
 
@@ -58,23 +58,27 @@ public class GameWindow extends PApplet {
         }
 
     }
-//    public ScoreRepository getScoreRepository() {
-//        return scoreRepository;
-//    }
+    public ScoreRepository getScoreRepository() {
+        return scoreRepository;
+    }
 
     @Override
     public void keyPressed() {
         gamePanel.onKeyPressed(key);
     }
 
+    /**
+     * Main method to run GameWindow.
+     * @param args arguements
+     */
     public static void main(String[] args) {
         PApplet.main("org.example.GameWindow");
-//        GameWindow gameWindow = new GameWindow();
-//        PApplet.runSketch(new String[]{"GameWindow"}, gameWindow);
-//
-//        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-//            gameWindow.getScoreRepository().close();
-//        }));
+        GameWindow gameWindow = new GameWindow();
+        PApplet.runSketch(new String[]{"GameWindow"}, gameWindow);
+
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            gameWindow.getScoreRepository().close();
+        }));
     }
 
 }

@@ -6,6 +6,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/** This class represents the GamePanel
+ * the class deals with the render, update
+ * reset and key handles for the game.
+ * @author noorsangha
+ */
 public class GamePanel {
 
     public GamePanel gamePanel;
@@ -19,21 +24,22 @@ public class GamePanel {
     private List<Enemy1> enemies;
 
     private int score;
-    private org.example.Player Player;
-
-    public Player getPlayer() {
-        return Player;
-    }
 
 
-//    private ScoreRepository scoreRepository;
+    private ScoreRepository scoreRepository;
 
+    /**
+     * GameState enumeration.
+     */
     public enum GameState {
         START,
         PLAYING,
         GAME_OVER
     }
 
+    /**
+     * GamePanel constructor.
+     */
     public GamePanel() {
         p1 = new Player(100, 300, 30, 30, 4);
         pipes = new ArrayList<>();
@@ -41,8 +47,12 @@ public class GamePanel {
         enemies = new ArrayList<>();
         gameState = GameState.START;
         score = 0;
-//        scoreRepository = new ScoreRepository();
+        scoreRepository = new ScoreRepository();
     }
+
+    /**
+     * Updates the gamestate.
+     */
 
     public void update() {
         if (gameState == GameState.PLAYING) {
@@ -84,11 +94,16 @@ public class GamePanel {
             }
         }
 
-//        if (gameState == GameState.GAME_OVER) {
-//            // Save the player's score and name (replace "Player" with the actual player name)
-//            scoreRepository.insertScore("Player", score);
-//        }
+        if (gameState == GameState.GAME_OVER) {
+            // Save the player's score and name (replace "Player" with the actual player name)
+            scoreRepository.insertScore("Player", score);
+        }
     }
+
+    /**
+     * render the game.
+     * @param p PApplet
+     */
 
     public void render(PApplet p) {
         p1.render(p);
@@ -115,19 +130,19 @@ public class GamePanel {
         p.textSize(24);
         p.text("Score: " + score, 20, 70);
 
-//        if (gameState == GameState.START) {
-//            List<ScoreEntry> topFiveScores = scoreRepository.getTopFiveScores();
-//
-//            p.fill(255);
-//            p.textSize(20);
-//            p.text("Top 5 Scores:", 250, 150);
-//
-//            int yOffset = 180;
-//            for (ScoreEntry entry : topFiveScores) {
-//                p.text(entry.getPName() + ": " + entry.getScore(), 250, yOffset);
-//                yOffset += 30;
-//            }
-//        }
+        if (gameState == GameState.START) {
+            List<ScoreEntry> topFiveScores = scoreRepository.getTopFiveScores();
+
+            p.fill(255);
+            p.textSize(20);
+            p.text("Top 5 Scores:", 250, 150);
+
+            int yOffset = 180;
+            for (ScoreEntry entry : topFiveScores) {
+                p.text(entry.getPName() + ": " + entry.getScore(), 250, yOffset);
+                yOffset += 30;
+            }
+        }
 
     }
 
@@ -153,7 +168,7 @@ public class GamePanel {
             if (gameState == GameState.START) {
                 gameState = GameState.PLAYING;
             } else if (gameState == GameState.PLAYING) {
-                p1.jump(); // call the jump() method of the player
+                p1.jump();
             } else if (gameState == GameState.GAME_OVER) {
                 reset();
             }

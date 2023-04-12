@@ -1,5 +1,13 @@
 # Project
 
+##Instructions 
+Press space bar to begin game. The point of the game is to jump throught the pipes that appear on the screen. Press space to make the player jump.
+
+
+
+
+
+
 ## Technical Project Requirements
 
 The minimum requirements for the project are outlined here to give you a starting point. Meeting the minimum requirements alone will not guarantee you a good mark. You are welcome to meet and exceed the minimum requirements if you have good, creative ideas and would like to discuss them with me.

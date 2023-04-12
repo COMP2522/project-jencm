@@ -3,9 +3,19 @@
 ## Instructions 
 Press space bar to begin game. The point of the game is to jump throught the pipes that appear on the screen. Press space to make the player jump.
 
+## Documentation COntributions
 
-
-
+Noor:
+UML diagram
+Pitch
+GamePanel
+GameWindow
+Gem
+Pipe
+Player
+ScoreEntry
+ScoreRepository
+Stone
 
 
 ## Technical Project Requirements
